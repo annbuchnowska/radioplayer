@@ -1,0 +1,91 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <title>radioplayer</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<h1>Radioplayer</h1>
+<div class="container">
+	<div class="radio">	
+		<div class="top-bar">
+			<div class="arrow icon"></div>
+          	<h2>STATIONS</h2>
+			<div class="power icon"></div>
+		</div>
+		<div class="radio-box">
+			<div>
+				<input id="st-1" name="accordion" type="radio" value="Putin FM" checked="checked" onclick="stationPreview(this.value)" />
+				<label for="st-1">Putin FM
+					<p class="frequency">
+					66,6</p></label>
+					<section class="content">
+						<div class="minus"></div>
+						<div class="image"></div>
+						<div class="plus"></div>
+					</section>
+			</div>  
+			<div>
+				<input id="st-2" name="accordion" type="radio" value="Dribble FM" checked="checked" onclick="stationPreview(this.value)"/>
+				<label for="st-2">Dribble FM
+					<p class="frequency">
+					101,2</p></label>
+					<section class="content">
+						<div class="minus"></div>
+						<div class="image"></div>
+						<div class="plus"></div>
+					</section>
+			</div>
+			<div>
+				<input id="st-3" name="accordion" type="radio" value="Dodge FM" checked="checked" onclick="stationPreview(this.value)" />
+				<label for="st-3">Dodge FM
+					<p class="frequency">
+					99,4</p></label>
+					<section class="content">
+						<div class="minus"></div>
+						<div class="image"></div>
+						<div class="plus"></div>
+					</section>
+			</div>
+			<div>
+				<input id="st-4" name="accordion" type="radio" value="Ballads FM" checked="checked" onclick="stationPreview(this.value)"/>
+				<label for="st-4">Ballads FM
+					<p class="frequency">
+					87,1</p></label>
+					<section class="content">
+						<div class="minus"></div>
+						<div class="image"></div>
+						<div class="plus"></div>
+					</section>
+			</div>
+			<div>
+				<input id="st-5" name="accordion" type="radio" value="Maximum FM" checked="checked" onclick="stationPreview(this.value)"/>
+				<label for="st-5">Maximum FM
+					<p class="frequency">
+					142,2</p></label>
+					<section class="content">
+						<div class="minus"></div>
+						<div class="image"></div>
+						<div class="plus"></div>
+					</section>
+			</div>
+		</div>
+		<div class="bottom-bar">
+			<h5 id="currentlyPlaying"></h5>
+			<p id="currentStation"></p>
+		</div>
+	</div>
+</div>
+
+<script>
+	function stationPreview(browser) {
+	    var station = document.querySelector('input[name="accordion"]:checked').value;
+	    console.log(station);
+	    document.getElementById("currentlyPlaying").innerHTML = "CURRENTLY PLAYING";
+	    document.getElementById("currentStation").innerHTML = station;
+	}
+</script>
+</body>

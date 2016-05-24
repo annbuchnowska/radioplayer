@@ -1,0 +1,215 @@
+$primaryColor: #a3acbe;
+$elementsPrimaryColor: #fff;
+$orangeColor: #eeae61;
+$backgroundColor: #2b2b36;
+@mixin flexbox {
+  display: ‐webkit‐box;
+  display: ‐moz‐box;
+  display: ‐ms‐flexbox;
+  display: ‐webkit‐flex;
+  display: flex;
+}
+@mixin box‐sizing($value) {
+  ‐webkit‐box‐sizing: $value;
+  ‐moz‐box‐sizing: $value;
+  box‐sizing: $value;
+}
+@mixin box-shadow($params) {
+  -webkit-box-shadow: $params;
+  -moz-box-shadow: $params;
+  box-shadow: $params;
+}
+$shadows: 1px 39px 70px -32px rgba(0, 0, 0, 0.75);
+
+* {
+  @include box‐sizing(border‐box);
+}
+.container {
+  width: 800px;
+  margin: 0 auto;
+  background-color: #21212b;
+  font: 44px Helvetica, Arial, sans-serif;
+  color: #a2abbd;
+}
+h1 {
+  display: none;
+}
+.radio {
+  width: 640px;
+  height: 1000px;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  background-color: $backgroundColor;
+  margin: 8%;
+  border-radius: 10px;
+  padding-top: 160px;
+  text-align: left;
+}
+.radio-box {
+  max-width: 100%;
+  padding: 0 6.25% 0 6.25%;
+}
+/* top bar style */
+.top-bar {
+  @include flexbox;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 160px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $orangeColor;
+  border-radius: 10px 10px 0 0;
+  color: $elementsPrimaryColor;
+  padding: 0 6.25% 0 6.25%;
+  h2 {
+    text-align: center; 
+    margin: 0;
+  }
+  .icon {
+    width: 44px;
+    height: 44px;  
+    cursor: pointer;
+  }
+  .arrow {
+    @extend .icon;
+    border-top: 3px solid $elementsPrimaryColor;
+    border-right: 3px solid $elementsPrimaryColor;
+    transform: rotate(-135deg);    
+  }
+  .power {
+    @extend .icon;
+    border: 3px solid  $elementsPrimaryColor;
+    border-top: 3px solid transparent;
+    border-radius: 50%;  
+    &:after {
+      content:''; 
+      position: absolute;
+      background: $elementsPrimaryColor;
+      width: 3px;
+      height: 22px;
+      right: 64px;
+      border-radius: 3px;    
+    }
+  } 
+}
+/* bottom bar style */
+.bottom-bar {
+  @include flexbox;
+  flex-direction: column;
+  justify-content: center;
+  height: 160px;
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1px solid $primaryColor;
+  background-color: #22222b;
+  border-radius: 0 0 10px 10px;
+  @include box-shadow($shadows);
+  h5 {
+    color: $orangeColor;
+    font-size: 22px;
+    }
+  h5, p {
+    text-align: center;
+    margin: 0;
+  }
+}
+label {
+  padding-top: 44px;
+  position: relative;
+  z-index: 2;
+  display: block;
+  height: 140px;
+  cursor: pointer;
+  border-top: 3px solid #353540;  
+  .frequency {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+}
+input {
+  display: none;
+  &:checked ~ section {
+    height: 290px;
+    transition: height 0.5s ease-in-out;
+  }
+}
+/* accordion (station) content */
+.content {
+  @include flexbox;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  height: 0px;    
+  z-index: 10;
+  transition: height 0.3s ease-in-out;
+  .minus {
+    position: relative;
+    width: 66px;
+    height: 66px;
+    border: 3px solid $primaryColor;
+    border-radius: 50%;
+    cursor: pointer;  
+    &:after {
+      content: '';
+      width: 30px;
+      height: 3px;
+      background-color: $primaryColor;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 50%;
+      transform: translateX(-50%);  
+    }
+  }
+  .plus {
+    position: relative;
+    width: 66px;
+    height: 66px;
+    border: 3px solid $primaryColor;
+    border-radius: 50%;
+    cursor: pointer;
+    &:before {
+      content: '';
+      width: 30px;
+      height: 3px;
+      background-color: $primaryColor;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &:after {
+      content: '';
+      width: 3px;
+      height: 30px;
+      background-color: $primaryColor;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 50%;
+    }
+  }
+  .image { 
+    width: 280px;
+    height: 280px;
+    border: 4px solid $primaryColor;
+    border-radius: 50%;
+    background-image: url(http://amazingpict.com/wp-content/uploads/2014/03/Nice-Music-Quotes-for-Computer-Wallpaper-728x607.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+@media (max-width: 800px) {
+
+}
+
+ 

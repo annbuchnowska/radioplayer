@@ -1,0 +1,188 @@
+@charset "UTF-8";
+* {
+  ‐webkit‐box‐sizing: border‐box;
+  ‐moz‐box‐sizing: border‐box;
+  box‐sizing: border‐box; }
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+  background-color: #21212b;
+  font: 44px Helvetica, Arial, sans-serif;
+  color: #a2abbd; }
+
+h1 {
+  display: none; }
+
+.radio {
+  width: 640px;
+  height: 1000px;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  background-color: #2b2b36;
+  margin: 8%;
+  border-radius: 10px;
+  padding-top: 160px;
+  text-align: left; }
+
+.radio-box {
+  max-width: 100%;
+  padding: 0 6.25% 0 6.25%; }
+
+/* top bar style */
+.top-bar {
+  display: ‐webkit‐box;
+  display: ‐moz‐box;
+  display: ‐ms‐flexbox;
+  display: ‐webkit‐flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 160px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #eeae61;
+  border-radius: 10px 10px 0 0;
+  color: #fff;
+  padding: 0 6.25% 0 6.25%; }
+  .top-bar h2 {
+    text-align: center;
+    margin: 0; }
+  .top-bar .icon, .top-bar .arrow, .top-bar .power {
+    width: 44px;
+    height: 44px;
+    cursor: pointer; }
+  .top-bar .arrow {
+    border-top: 3px solid #fff;
+    border-right: 3px solid #fff;
+    transform: rotate(-135deg); }
+  .top-bar .power {
+    border: 3px solid #fff;
+    border-top: 3px solid transparent;
+    border-radius: 50%; }
+    .top-bar .power:after {
+      content: '';
+      position: absolute;
+      background: #fff;
+      width: 3px;
+      height: 22px;
+      right: 64px;
+      border-radius: 3px; }
+
+/* bottom bar style */
+.bottom-bar {
+  display: ‐webkit‐box;
+  display: ‐moz‐box;
+  display: ‐ms‐flexbox;
+  display: ‐webkit‐flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 160px;
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1px solid #a3acbe;
+  background-color: #22222b;
+  border-radius: 0 0 10px 10px;
+  -webkit-box-shadow: 1px 39px 70px -32px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 39px 70px -32px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 39px 70px -32px rgba(0, 0, 0, 0.75); }
+  .bottom-bar h5 {
+    color: #eeae61;
+    font-size: 22px; }
+  .bottom-bar h5, .bottom-bar p {
+    text-align: center;
+    margin: 0; }
+
+label {
+  padding-top: 44px;
+  position: relative;
+  z-index: 2;
+  display: block;
+  height: 140px;
+  cursor: pointer;
+  border-top: 3px solid #353540; }
+  label .frequency {
+    position: absolute;
+    top: 0px;
+    right: 0px; }
+
+input {
+  display: none; }
+  input:checked ~ section {
+    height: 290px;
+    transition: height 0.5s ease-in-out; }
+
+/* accordion (station) content */
+.content {
+  display: ‐webkit‐box;
+  display: ‐moz‐box;
+  display: ‐ms‐flexbox;
+  display: ‐webkit‐flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  height: 0px;
+  z-index: 10;
+  transition: height 0.3s ease-in-out; }
+  .content .minus {
+    position: relative;
+    width: 66px;
+    height: 66px;
+    border: 3px solid #a3acbe;
+    border-radius: 50%;
+    cursor: pointer; }
+    .content .minus:after {
+      content: '';
+      width: 30px;
+      height: 3px;
+      background-color: #a3acbe;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 50%;
+      transform: translateX(-50%); }
+  .content .plus {
+    position: relative;
+    width: 66px;
+    height: 66px;
+    border: 3px solid #a3acbe;
+    border-radius: 50%;
+    cursor: pointer; }
+    .content .plus:before {
+      content: '';
+      width: 30px;
+      height: 3px;
+      background-color: #a3acbe;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 50%;
+      transform: translateX(-50%); }
+    .content .plus:after {
+      content: '';
+      width: 3px;
+      height: 30px;
+      background-color: #a3acbe;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 50%; }
+  .content .image {
+    width: 280px;
+    height: 280px;
+    border: 4px solid #a3acbe;
+    border-radius: 50%;
+    background-image: url(http://amazingpict.com/wp-content/uploads/2014/03/Nice-Music-Quotes-for-Computer-Wallpaper-728x607.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; }
+
+/*# sourceMappingURL=main.css.map */
