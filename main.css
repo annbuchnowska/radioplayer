@@ -16,7 +16,6 @@ h1 {
 
 .radio {
   width: 640px;
-  height: 1000px;
   display: inline-block;
   vertical-align: top;
   position: relative;
@@ -83,7 +82,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
   height: 160px;
-  position: absolute;
+  position: relative;
   z-index: 10;
   bottom: 0;
   left: 0;
@@ -120,7 +119,7 @@ input {
     height: 290px;
     transition: height 0.5s ease-in-out; }
 
-/* accordion (station) content */
+/* accordion content */
 .content {
   display: ‐webkit‐box;
   display: ‐moz‐box;
